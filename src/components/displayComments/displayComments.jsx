@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const DisplayComments = (props) => {
 
-    const [displayComments, setDisplayComments] = useState ({});
+    const [displayComments, setDisplayComments] = useState ([]);
 
     useEffect(() => {
          axios.get('http://localhost:5000/api/comments/46h4by4r74')
@@ -13,13 +13,13 @@ const DisplayComments = (props) => {
 
     return (
         <div>
-           {displayComments && displayComments.map(function(el) {
-               return <ul>
-                   <li>{el}</li>
-               </ul>;
-           })
-           
-        }//array.map//
+            {
+            displayComments && displayComments.map(comment =>{
+               return (
+                        <li>{comment.text}</li>
+                    );
+           }) 
+           }
         </div>
     );
 }

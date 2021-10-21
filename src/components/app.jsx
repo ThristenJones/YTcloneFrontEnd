@@ -13,7 +13,7 @@ const App = () => {
             <SearchBar />
             <TitleBar /> 
             <VideoPlayer />
-            <DisplayComments />
+           <ul><DisplayComments /></ul>
         </div>
         )
 }
