@@ -16,7 +16,16 @@ const DisplayComments = (props) => {
             {
             displayComments && displayComments.map(comment =>{
                return (
-                        <li>{comment.text}</li>
+                        <li>
+                            {comment.text}
+                            <br/>
+                            {comment.timeStamp}
+
+                            {comment.replies.map(reply => [
+                                reply.text,
+                                reply.timeStamp
+                            ])}
+                        </li>
                     );
            }) 
            }
